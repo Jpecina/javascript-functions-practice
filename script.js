@@ -271,53 +271,56 @@
 // console.log(ages)
 // console.log(fullJapan);
 
-(function() {
-  function Question(question, answers, correct) {
-    this.question = question;
-    this.answers = answers;
-    this.correct = correct;
-  }
-  Question.prototype.displayQuestion = function() {
-    console.log(this.question);
+// (function() {
+//   function Question(question, answers, correct) {
+//     this.question = question;
+//     this.answers = answers;
+//     this.correct = correct;
+//   }
+//   Question.prototype.displayQuestion = function() {
+//     console.log(this.question);
 
-    for (let i = 0; i < this.answers.length; i++) {
-      console.log(`${i}: ${this.answers[i]}`);
-    }
-  };
-  Question.prototype.checkAnswer = function(ans) {
-    if (ans === this.correct) {
-      console.log("Correct Answer!!!");
-    } else {
-      console.log("Incorrect Answer!!!");
-    }
-  };
+//     for (let i = 0; i < this.answers.length; i++) {
+//       console.log(`${i}: ${this.answers[i]}`);
+//     }
+//   };
+//   Question.prototype.checkAnswer = function(ans) {
+//     if (ans === this.correct) {
+//       console.log("Correct Answer!!!");
+//     } else {
+//       console.log("Incorrect Answer!!!");
+//     }
+//   };
 
-  var q1 = new Question(
-    "Is Javascript the coolest programing language in the world?",
-    ["yes", "no"],
-    0
-  );
-  var q2 = new Question(
-    "what is the name of this course's teacher?",
-    ["John", "Micheal", "Jonas"],
-    2
-  );
-  var q3 = new Question(
-    "what does best describe coding",
-    ["boring", "hard", "fun", "tedius"],
-    2
-  );
-  // console.log(q1);
+//   var q1 = new Question(
+//     "Is Javascript the coolest programing language in the world?",
+//     ["yes", "no"],
+//     0
+//   );
+//   var q2 = new Question(
+//     "what is the name of this course's teacher?",
+//     ["John", "Micheal", "Jonas"],
+//     2
+//   );
+//   var q3 = new Question(
+//     "what does best describe coding",
+//     ["boring", "hard", "fun", "tedius"],
+//     2
+//   );
+//   // console.log(q1);
 
-  var questions = [q1, q2, q3];
+//   var questions = [q1, q2, q3];
 
-  var n = Math.floor(Math.random() * questions.length);
+//   var n = Math.floor(Math.random() * questions.length);
 
-  questions[n].displayQuestion();
+//   questions[n].displayQuestion();
 
-  const answer = parseInt(prompt("Please Select the correct answer"));
+//   const answer = parseInt(prompt("Please Select the correct answer"));
 
-  console.log(answer);
+//   console.log(answer);
 
-  questions[n].checkAnswer(answer);
-})();
+//   questions[n].checkAnswer(answer);
+// })();
+
+
+// ES6 
