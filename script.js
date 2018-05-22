@@ -339,35 +339,45 @@
 // name6 = "Jane Miller";
 // console.log(name6);
 
-function driversLicence5(passedTest) {
-  if (passedTest) {
-    var firstName = "John";
-    var yearOfBirth = 1990;
-  }
-  console.log(
-    firstName +
-      " was born in " +
-      yearOfBirth +
-      ", " +
-      "he is now allowed to drive"
-  );
-}
+// function driversLicence5(passedTest) {
+//   if (passedTest) {
+//     var firstName = "John";
+//     var yearOfBirth = 1990;
+//   }
+//   // console.log(
+//   //   firstName +
+//   //     " was born in " +
+//   //     yearOfBirth +
+//   //     ", " +
+//   //     "he is now allowed to drive"
+//   // );
+// }
 
-driversLicence5(true);
+// driversLicence5(true);
 
-function driversLicence6(passedTest) {
-  let firstName;
-  const yearOfBirth = 1990;
-  if (passedTest) {
-    firstName = "John";
-  }
-  console.log(
-    firstName +
-      " was born in " +
-      yearOfBirth +
-      ", " +
-      "he is now allowed to drive"
-  );
-}
+// function driversLicence6(passedTest) {
+//   let firstName;
+//   const yearOfBirth = 1990;
+//   if (passedTest) {
+//     firstName = "John";
+//   }
+//   console.log(
+//     firstName +
+//       " was born in " +
+//       yearOfBirth +
+//       ", " +
+//       "he is now allowed to drive"
+//   );
+// }
 
-driversLicence6(true);
+// driversLicence6(true);
+
+// let i = 23;
+
+// for (let i = 0; i < 5; i++) {
+//   console.log(i);
+// }
+
+// console.log(i);
+
+
