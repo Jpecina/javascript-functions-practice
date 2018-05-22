@@ -380,4 +380,50 @@
 
 // console.log(i);
 
+// Blocks and IIFEs
 
+//ES6
+
+// {
+//   const a = 1;
+//   let b = 2;
+//   var c = 3;
+// }
+
+// // console.log(a + b);
+
+// // es5
+
+// (function() {
+//   var c = 3;
+// })();
+// console.log(c);
+
+// Strings: Template Strings
+
+let firstName = "John";
+let lastName = "Smith";
+const yearOfBirth = 1990;
+
+function calculateAge(year) {
+  return 2016 - year;
+}
+
+// es5
+
+console.log("" + "");
+
+// ES6
+
+console.log(
+  `This is ${firstName} ${lastName} He was Born ${yearOfBirth}. today he is ${calculateAge(
+    yearOfBirth
+  )} years old`
+);
+
+const n = `${firstName} ${lastName}`;
+
+console.log(n.startsWith("J"));
+console.log(n.endsWith("th"));
+console.log(n.includes(" "));
+console.log(`${firstName} `.repeat(5));
