@@ -322,5 +322,52 @@
 //   questions[n].checkAnswer(answer);
 // })();
 
+// ES6 ecma2015
 
-// ES6 
+// Lecture let and const
+
+// var name5 = "Jane Smith";
+// var age5 = 23;
+
+// name5 = "Jane Miller";
+// console.log(name5);
+
+// // es6
+
+// const name6 = "Jane Smith";
+// let age6 = 24;
+// name6 = "Jane Miller";
+// console.log(name6);
+
+function driversLicence5(passedTest) {
+  if (passedTest) {
+    var firstName = "John";
+    var yearOfBirth = 1990;
+  }
+  console.log(
+    firstName +
+      " was born in " +
+      yearOfBirth +
+      ", " +
+      "he is now allowed to drive"
+  );
+}
+
+driversLicence5(true);
+
+function driversLicence6(passedTest) {
+  let firstName;
+  const yearOfBirth = 1990;
+  if (passedTest) {
+    firstName = "John";
+  }
+  console.log(
+    firstName +
+      " was born in " +
+      yearOfBirth +
+      ", " +
+      "he is now allowed to drive"
+  );
+}
+
+driversLicence6(true);
