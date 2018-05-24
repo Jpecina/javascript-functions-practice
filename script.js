@@ -401,29 +401,108 @@
 
 // Strings: Template Strings
 
-let firstName = "John";
-let lastName = "Smith";
-const yearOfBirth = 1990;
+// let firstName = "John";
+// let lastName = "Smith";
+// const yearOfBirth = 1990;
 
-function calculateAge(year) {
-  return 2016 - year;
-}
+// function calculateAge(year) {
+//   return 2016 - year;
+// }
 
-// es5
+// // es5
 
-console.log("" + "");
+// console.log("" + "");
+
+// // ES6
+
+// console.log(
+//   `This is ${firstName} ${lastName} He was Born ${yearOfBirth}. today he is ${calculateAge(
+//     yearOfBirth
+//   )} years old`
+// );
+
+// const n = `${firstName} ${lastName}`;
+
+// console.log(n.startsWith("J"));
+// console.log(n.endsWith("th"));
+// console.log(n.includes(" "));
+// console.log(`${firstName} `.repeat(5));
+
+const years = [1990, 1965, 1982, 1937];
+
+// ES5
+
+var ages5 = years.map(function(current, i) {
+  return 2016 - current;
+});
+console.log(ages5);
 
 // ES6
 
-console.log(
-  `This is ${firstName} ${lastName} He was Born ${yearOfBirth}. today he is ${calculateAge(
-    yearOfBirth
-  )} years old`
-);
+const ages6 = years.map(current => 2016 - current);
 
-const n = `${firstName} ${lastName}`;
+//Arrow functions 2 ... have a lexical this variable
 
-console.log(n.startsWith("J"));
-console.log(n.endsWith("th"));
-console.log(n.includes(" "));
-console.log(`${firstName} `.repeat(5));
+// ES5
+var box5 = {
+  color: "green",
+  position: 1,
+  clickMe: function() {
+    var self = this;
+    document.querySelector(".green").addEventListener("click", function() {
+      var str =
+        "this is box number" + " " + self.position + " and it is " + self.color;
+      alert(str);
+    });
+  }
+};
+
+box5.clickMe();
+
+//ES6
+
+var box6 = {
+  color: "green",
+  position: 1,
+  clickMe: function() {
+    document.querySelector(".green").addEventListener("click", () => {
+      const str =
+        "this is box number" + " " + self.position + " and it is " + self.color;
+      alert(str);
+    });
+  }
+};
+
+box6.clickMe();
+
+function Person(name) {
+  this.name = name;
+}
+
+//es5
+
+// Person.prototype.myFriends5 = function(friends) {
+//   var arr = friends.map(
+//     function(current) {
+//       return this.name + "is Friends with " + current;
+//     }.bind(this)
+//   );
+
+//   console.log(arr);
+// };
+
+// var friends = ["bob", "Jane", "mark"];
+// new Person("John").myFriends5(friends);
+
+Person.prototype.myFriends5 = function(friends) {
+  var arr = friends.map(current => {
+    return `${this.name} is Friends with ${current}`;
+  });
+
+  console.log(arr);
+};
+
+var friends = ["bob", "Jane", "mark"];
+new Person("Mike").myFriends5(friends);
+
+//Destructuring
