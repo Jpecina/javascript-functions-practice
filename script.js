@@ -600,37 +600,93 @@
 // console.log(ages.find(cur => cur >= 18));
 
 //ES5
-function addFourAges(a, b, c, d) {
-  return a + b + c + d;
+// function addFourAges(a, b, c, d) {
+//   return a + b + c + d;
+// }
+// var sum1 = addFourAges(18, 30, 12, 21);
+
+// console.log(sum1);
+
+// //
+// var ages = [18, 30, 12, 21];
+// var sum2 = addFourAges.apply(null, ages);
+// console.log(sum2);
+
+// //ES6 Spread Operator
+
+// const sum3 = addFourAges(...ages);
+// console.log(sum3);
+
+// const familySmith = ["john", "Jane", "Mark"];
+// const familyMiller = ["Mary", "Bob", "Ann"];
+
+// const bigFamily = [...familySmith, "Lilly", ...familyMiller];
+// console.log(bigFamily);
+
+// const h = document.querySelector("h1");
+
+// const boxes = document.querySelectorAll(".box");
+
+// const all = [h, ...boxes];
+
+// Array.from(all).forEach(cur => (cur.style.color = "purple"));
+
+// // all.forEach(cur => (cur.style.color = "purple"));
+
+// console.log(all);
+
+// Rest parameters
+
+// ES5
+
+// function isFullAge() {
+//   console.log(arguments);
+//   let argsArr = Array.prototype.slice.call(arguments);
+
+//   argsArr.forEach(function(cur) {
+//     console.log(2016 - cur >= 18);
+//   });
+// }
+
+// isFullAge(1990, 1999, 1965);
+// isFullAge(1990, 1999, 1965, 2016, 1987);
+
+// //ES6
+
+// function isFullAge6(...years) {
+//   years.forEach(cur => console.log(2016 - cur >= 18));
+//   // console.log(years);
+// }
+// isFullAge6(1990, 1999, 1965, 2016, 1987);
+
+// Default Parameters
+
+//ES5
+
+function SmithPerson(firstName, yearOfBirth, lastName, nationality) {
+  lastName === undefined ? (lastName = "Smith") : lastName;
+  nationality === undefined ? (nationality = "American") : nationality;
+
+  this.firstName = firstName;
+  this.yearOfBirth = yearOfBirth;
+  this.lastName = lastName;
+  this.nationality = nationality;
 }
-var sum1 = addFourAges(18, 30, 12, 21);
 
-console.log(sum1);
+// var john = new SmithPerson("john", 1990);
 
-//
-var ages = [18, 30, 12, 21];
-var sum2 = addFourAges.apply(null, ages);
-console.log(sum2);
+// ES6
 
-//ES6 Spread Operator
+function SmithPerson(
+  firstName,
+  yearOfBirth,
+  lastName = "Smith",
+  nationality = "American"
+) {
+  this.firstName = firstName;
+  this.yearOfBirth = yearOfBirth;
+  this.lastName = lastName;
+  this.nationality = nationality;
+}
 
-const sum3 = addFourAges(...ages);
-console.log(sum3);
-
-const familySmith = ["john", "Jane", "Mark"];
-const familyMiller = ["Mary", "Bob", "Ann"];
-
-const bigFamily = [...familySmith, "Lilly", ...familyMiller];
-console.log(bigFamily);
-
-const h = document.querySelector("h1");
-
-const boxes = document.querySelectorAll(".box");
-
-const all = [h, ...boxes];
-
-Array.from(all).forEach(cur => (cur.style.color = "purple"));
-
-// all.forEach(cur => (cur.style.color = "purple"));
-
-console.log(all);
+var jane = new SmithPerson("jane", 1990, "Roberts");
