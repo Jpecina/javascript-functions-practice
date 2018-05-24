@@ -428,56 +428,56 @@
 // console.log(n.includes(" "));
 // console.log(`${firstName} `.repeat(5));
 
-const years = [1990, 1965, 1982, 1937];
+// const years = [1990, 1965, 1982, 1937];
 
-// ES5
+// // ES5
 
-var ages5 = years.map(function(current, i) {
-  return 2016 - current;
-});
-console.log(ages5);
+// var ages5 = years.map(function(current, i) {
+//   return 2016 - current;
+// });
+// console.log(ages5);
 
 // ES6
 
-const ages6 = years.map(current => 2016 - current);
+// const ages6 = years.map(current => 2016 - current);
 
-//Arrow functions 2 ... have a lexical this variable
+// //Arrow functions 2 ... have a lexical this variable
 
-// ES5
-var box5 = {
-  color: "green",
-  position: 1,
-  clickMe: function() {
-    var self = this;
-    document.querySelector(".green").addEventListener("click", function() {
-      var str =
-        "this is box number" + " " + self.position + " and it is " + self.color;
-      alert(str);
-    });
-  }
-};
+// // ES5
+// var box5 = {
+//   color: "green",
+//   position: 1,
+//   clickMe: function() {
+//     var self = this;
+//     document.querySelector(".green").addEventListener("click", function() {
+//       var str =
+//         "this is box number" + " " + self.position + " and it is " + self.color;
+//       alert(str);
+//     });
+//   }
+// };
 
-box5.clickMe();
+// box5.clickMe();
 
-//ES6
+// //ES6
 
-var box6 = {
-  color: "green",
-  position: 1,
-  clickMe: function() {
-    document.querySelector(".green").addEventListener("click", () => {
-      const str =
-        "this is box number" + " " + self.position + " and it is " + self.color;
-      alert(str);
-    });
-  }
-};
+// var box6 = {
+//   color: "green",
+//   position: 1,
+//   clickMe: function() {
+//     document.querySelector(".green").addEventListener("click", () => {
+//       const str =
+//         "this is box number" + " " + self.position + " and it is " + self.color;
+//       alert(str);
+//     });
+//   }
+// };
 
-box6.clickMe();
+// box6.clickMe();
 
-function Person(name) {
-  this.name = name;
-}
+// function Person(name) {
+//   this.name = name;
+// }
 
 //es5
 
@@ -494,15 +494,107 @@ function Person(name) {
 // var friends = ["bob", "Jane", "mark"];
 // new Person("John").myFriends5(friends);
 
-Person.prototype.myFriends5 = function(friends) {
-  var arr = friends.map(current => {
-    return `${this.name} is Friends with ${current}`;
-  });
+// Person.prototype.myFriends5 = function(friends) {
+//   var arr = friends.map(current => {
+//     return `${this.name} is Friends with ${current}`;
+//   });
 
-  console.log(arr);
-};
+//   console.log(arr);
+// };
 
-var friends = ["bob", "Jane", "mark"];
-new Person("Mike").myFriends5(friends);
+// var friends = ["bob", "Jane", "mark"];
+// new Person("Mike").myFriends5(friends);
 
 //Destructuring
+
+// ES5
+
+// var john = ["John", 26];
+
+// var name = john[0];
+// var age = john[1];
+
+//es6
+
+// let [name, age] = ["john", 26];
+
+// console.log(name);
+// console.log(age);
+
+// const obj = {
+//   firstName: "John",
+//   lastName: "Smith"
+// };
+
+// const { firstName, lastName } = obj;
+
+// console.log(firstName);
+// console.log(lastName);
+
+// // Aliasing destructure
+// const { firstName: a, lastName: b } = obj;
+
+// function calcAgeRetirement(year) {
+//   const age = new Date().getFullYear() - year;
+//   return [age, 65 - age];
+// }
+
+// const [age, retirement] = calcAgeRetirement(1990);
+
+// console.log(age);
+// console.log(retirement);
+
+//ES6 ARRAYS
+
+const boxes = document.querySelectorAll(".box");
+
+// console.log(boxes);
+
+// //ES5
+
+// var boxesArr5 = Array.prototype.slice.call(boxes);
+// boxesArr5.forEach(element => {
+//   element.style.backgroundColor = "dodgerblue";
+// });
+
+const boxesArr6 = Array.from(boxes);
+boxesArr6.forEach(cur => {
+  cur.style.backgroundColor = "dodgerblue";
+});
+
+// // LOOPS
+
+// //ES5
+
+// for (var i = 0; i < boxesArr6.length; i++) {
+//   if (boxesArr6[i].className === "box blue") {
+//     continue;
+//     // break;
+//   }
+//   boxesArr6[i].textContent = "I changed to blue";
+// }
+
+// For Of loop
+
+for (const cur of boxesArr6) {
+  if (cur.className.includes("blue")) {
+    continue;
+  }
+  cur.textContent = "I changed to blue";
+}
+
+// ES5
+
+var ages = [12, 17, 8, 21, 14, 11];
+
+var full = ages.map(function(cur) {
+  return cur >= 18;
+});
+console.log(full);
+console.log(full.indexOf(true));
+console.log(ages[full.indexOf(true)]);
+
+// ES6
+
+console.log(ages.findIndex(cur => cur >= 18));
+console.log(ages.find(cur => cur >= 18));
