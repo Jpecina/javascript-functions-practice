@@ -693,19 +693,75 @@
 
 //MAPs is a key value data structure
 
-const question = new Map();
+// const question = new Map();
 
-question.set(
-  "question",
-  "what is the official name of the latest major Javascript version"
-);
-question.set(1, "es5");
-question.set(2, "es6");
-question.set(3, "ES2015");
-question.set(4, "ES7");
-question.set("correct", 3);
-question.set(true, "Correct answer :D");
-question.set(false, "Wrong Try Again :(");
+// question.set(
+//   "question",
+//   "what is the official name of the latest major Javascript version"
+// );
+// question.set(1, "es5");
+// question.set(2, "es6");
+// question.set(3, "ES2015");
+// question.set(4, "ES7");
+// question.set("correct", 3);
+// question.set(true, "Correct answer :D");
+// question.set(false, "Wrong Try Again :(");
 
-console.log(question.get("question"));
-console.log(question.size);
+// console.log(question.get("question"));
+// // console.log(question.size);
+
+// // if (question.has(4)) {
+// //   question.delete(4);
+// // }
+
+// // // question.clear();
+// // question.forEach((value, key) =>
+// //   console.log(`this is key: ${key} and its set to ${value}`)
+// // );
+
+// for (let [key, value] of question.entries()) {
+//   if (typeof key === "number") {
+//     console.log(`Answer ${key}: ${value}`);
+//   }
+// }
+
+// const ans = parseInt(prompt("Write the correct answer"));
+
+// Classes
+
+//ES5
+
+var Person5 = function(name, yearOfBirth, job) {
+  this.name = name;
+  this.yearOfBirth = yearOfBirth;
+  this.job = job;
+};
+
+Person5.prototype.calculateAge = function() {
+  let age = new Date().getFullYear - this.yearOfBirth;
+  console.log(age);
+};
+var john5 = new Person5("John", 1990, "teacher");
+
+//ES6
+class Person6 {
+  constructor(name, yearOfBirth, job) {
+    this.name = name;
+    this.yearOfBirth;
+    this.job = job;
+  }
+  calculateAge() {
+    let age = new Date().getFullYear - this.yearOfBirth;
+    console.log(age);
+  }
+  static greeting() {
+    console.log("hey there");
+  }
+}
+
+const john6 = new Person6("john", 1990, "teacher");
+
+console.log(john5);
+console.log(john6);
+
+Person6.greeting();
