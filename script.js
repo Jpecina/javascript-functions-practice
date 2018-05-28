@@ -663,30 +663,49 @@
 
 //ES5
 
-function SmithPerson(firstName, yearOfBirth, lastName, nationality) {
-  lastName === undefined ? (lastName = "Smith") : lastName;
-  nationality === undefined ? (nationality = "American") : nationality;
+// function SmithPerson(firstName, yearOfBirth, lastName, nationality) {
+//   lastName === undefined ? (lastName = "Smith") : lastName;
+//   nationality === undefined ? (nationality = "American") : nationality;
 
-  this.firstName = firstName;
-  this.yearOfBirth = yearOfBirth;
-  this.lastName = lastName;
-  this.nationality = nationality;
-}
+//   this.firstName = firstName;
+//   this.yearOfBirth = yearOfBirth;
+//   this.lastName = lastName;
+//   this.nationality = nationality;
+// }
 
-// var john = new SmithPerson("john", 1990);
+// // var john = new SmithPerson("john", 1990);
 
-// ES6
+// // ES6
 
-function SmithPerson(
-  firstName,
-  yearOfBirth,
-  lastName = "Smith",
-  nationality = "American"
-) {
-  this.firstName = firstName;
-  this.yearOfBirth = yearOfBirth;
-  this.lastName = lastName;
-  this.nationality = nationality;
-}
+// function SmithPerson(
+//   firstName,
+//   yearOfBirth,
+//   lastName = "Smith",
+//   nationality = "American"
+// ) {
+//   this.firstName = firstName;
+//   this.yearOfBirth = yearOfBirth;
+//   this.lastName = lastName;
+//   this.nationality = nationality;
+// }
 
-var jane = new SmithPerson("jane", 1990, "Roberts");
+// var jane = new SmithPerson("jane", 1990, "Roberts");
+
+//MAPs is a key value data structure
+
+const question = new Map();
+
+question.set(
+  "question",
+  "what is the official name of the latest major Javascript version"
+);
+question.set(1, "es5");
+question.set(2, "es6");
+question.set(3, "ES2015");
+question.set(4, "ES7");
+question.set("correct", 3);
+question.set(true, "Correct answer :D");
+question.set(false, "Wrong Try Again :(");
+
+console.log(question.get("question"));
+console.log(question.size);
