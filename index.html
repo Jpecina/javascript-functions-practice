@@ -1,33 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Section 7: Get Ready for the Future: ES6 / ES2015</title>
-        
-        <style>
-            .box {
-                width: 200px;
-                padding: 60px;
-                text-align: center;
-                font-size: 30px;
-                margin-top: 50px;
-            }
-            
-            .green { background-color: green; }
-            .blue { background-color: dodgerblue; }
-            .orange { background-color: orangered; }
-            
-        </style>
-        
-    </head>
 
-    <body>
-        <h1>Section 7: Get Ready for the Future: ES6 / ES2015</h1>
-        
-        <div class="box green">I'm green!</div>
-        <div class="box blue">I'm blue!</div>
-        <div class="box orange">I'm orange!</div>
-        
-        <script src="script.js"></script>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>Section 7: Get Ready for the Future: ES6 / ES2015</title>
+
+    <style>
+        .box {
+            width: 200px;
+            padding: 60px;
+            text-align: center;
+            font-size: 30px;
+            margin-top: 50px;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .blue {
+            background-color: dodgerblue;
+        }
+
+        .orange {
+            background-color: orangered;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Asynchronus Javascript
+    </h1>
+    <!-- <h1>Section 7: Get Ready for the Future: ES6 / ES2015</h1>
+
+    <div class="box green">I'm green!</div>
+    <div class="box blue">I'm blue!</div>
+    <div class="box orange">I'm orange!</div>
+
+    <script src="script-transpiled.js"></script> -->
+
+    <script>
+        // const second = () => {
+        //     setTimeout(() => {
+        //         console.log("Async Hey there")
+        //     }, 2000)
+        // }
+
+
+        // const first = () => {
+        //     console.log("hey there");
+        //     second();
+        //     console.log("the end")
+        // }
+        // first();
+
+        // function getRecipe() {
+        //     setTimeout(() => {
+        //         const recipeID = [523, 883, 432, 974]
+        //         console.log(recipeID);
+        //         setTimeout((id) => {
+        //             const recipe = {
+        //                 title: "Fresh Tomato Pasta",
+        //                 Publisher: "Johnas"
+        //             }
+        //             console.log(`${id}: ${recipe.title}`)
+        //             setTimeout(publisher => {
+        //                 const recipe = {
+        //                     title: "Pizza",
+        //                     publisher: "Johna"
+        //                 }
+        //                 console.log(recipe)
+        //             }, 1500, recipe.publisher)
+        //         }, 1000, recipeID[2])
+
+        //     }, 1500)
+        // }
+        // getRecipe()
+
+        const getIDs = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve([523, 883, 432, 974])
+            }, 1500)
+
+        });
+
+
+
+
+
+        getIDs.then((response) => {
+            console.log(response)
+
+        }).catch((err) => console.log(err))
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
 </html>
