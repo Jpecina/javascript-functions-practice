@@ -88,11 +88,47 @@
 
 
 
+        const getRecipe = recID => {
+            return new Promise((resolve, reject) => {
+                setTimeout(id => {
+                    const recipe = {
+                        title: "Fresh Tomato Pasta",
+                        publisher: "Jonas"
+                    };
+                    resolve(`${id}: ${recipe.title}`)
+                }, 1500, recID)
+
+            });
+        };
+
+
+        const getRelated = (publisher) => {
+            return new Promise((resolve, reject) => {
+                setTimeout(pub => {
+                    const recipe = {
+                        title: "Pizza",
+                        publisher: "jonas"
+                    };
+                    resolve(`${pub}:${recipe.title}`)
+                }, 1500, publisher)
+            })
+        };
+
 
         getIDs.then((response) => {
-            console.log(response)
+            console.log(response);
+            return getRecipe(response[2])
 
-        }).catch((err) => console.log(err))
+        })
+            .then(response => {
+                console.log(response)
+                return getRelated("jonas")
+            })
+            .then(response => {
+                console.log(response)
+            }
+            )
+            .catch((err) => console.log(err))
 
 
 
